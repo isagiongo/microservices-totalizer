@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: twitter-service
+server:
+  port: 8081
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+twitter:
+  consumer:
+    key: GUojBGc5v08jChbarOC62XMWy
+    secret: y6DhLlZCvM5AdlqGQdyX9MMdnWXMoLcCbVOvuNPDM6meUkQAv5
+  access:
+    token: 35781399-ApgJz1pXkAYV0sivNHoIxMyJ7YttTPdR8KNZSTSlf
+    secret: obZjUXOrunYlLaRaoGEeSHrvd1C9vEmklI7dTsd1sX12J

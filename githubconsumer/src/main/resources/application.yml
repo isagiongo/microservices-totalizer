@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: githubconsumer
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+github:
+  personal:
+    token: 57327f9cd0ba3cc315725a4c71d9b52f670b44fe
