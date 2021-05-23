@@ -22,7 +22,7 @@ public class TotalizerControllerIT {
 
     @BeforeEach
     public void setUp() {
-        RestAssured.baseURI = "http://localhost";
+        RestAssured.baseURI = "http://totalizer";
         RestAssured.port = randomPort;
     }
 

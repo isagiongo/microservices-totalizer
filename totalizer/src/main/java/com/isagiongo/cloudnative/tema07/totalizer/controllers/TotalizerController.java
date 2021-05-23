@@ -22,13 +22,23 @@ public class TotalizerController {
     }
 
     @GetMapping("/twitts/{name}")
-    public String getTwitts(@PathVariable String name) {
-        return twitterService.getAmountTwittsByUser(name);
+    public ResponseEntity<String> getTwitts(@PathVariable String name) {
+        try {
+            String twitts = twitterService.getAmountTwittsByUser(name);
+            return ResponseEntity.ok(String.format("User [%s] - Total of twitts: [%s]", name, twitts));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @GetMapping("/repositories/{name}")
-    public String getRepositories(@PathVariable String name) {
-        return githubService.getAmountRepositoriesByUser(name);
+    public ResponseEntity<String> getRepositories(@PathVariable String name) {
+        try {
+            String repositories = githubService.getAmountRepositoriesByUser(name);
+            return ResponseEntity.ok(String.format("User [%s] - Total of repositories: [%s]", name, repositories));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @GetMapping("/")
